@@ -10,6 +10,70 @@
       <uri>model://ground_plane</uri>
     </include>
     
+    <!-- Ein Block als Tisch -->
+    <model name="table">
+      <static>true</static>
+      <pose>0.5 0 0.25 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <box>
+              <size>1.0 1.0 0.5</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <box>
+              <size>1.0 1.0 0.5</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.7 0.5 0.3 1</ambient>
+            <diffuse>0.7 0.5 0.3 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+      </link>
+    </model>
+    
+    <!-- Eine Kugel als Objekt zum Greifen -->
+    <model name="ball">
+      <pose>0.7 0 0.8 0 0 0</pose>
+      <link name="link">
+        <collision name="collision">
+          <geometry>
+            <sphere>
+              <radius>0.03</radius>
+            </sphere>
+          </geometry>
+        </collision>
+        <visual name="visual">
+          <geometry>
+            <sphere>
+              <radius>0.03</radius>
+            </sphere>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>0.1 0.1 0.1 1</specular>
+          </material>
+        </visual>
+        <inertial>
+          <mass>0.05</mass>
+          <inertia>
+            <ixx>0.00001</ixx>
+            <ixy>0</ixy>
+            <ixz>0</ixz>
+            <iyy>0.00001</iyy>
+            <iyz>0</iyz>
+            <izz>0.00001</izz>
+          </inertia>
+        </inertial>
+      </link>
+    </model>
+    
     <physics type="ode">
       <real_time_update_rate>1000.0</real_time_update_rate>
       <max_step_size>0.001</max_step_size>
