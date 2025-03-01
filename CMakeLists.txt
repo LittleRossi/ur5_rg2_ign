@@ -1,11 +1,19 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.0.2)
 project(ur5_rg2_ign)
 
 # Find dependencies
-find_package(ament_cmake REQUIRED)
+find_package(catkin REQUIRED)
+
+# Declare catkin package
+catkin_package()
 
 # Install directories
-install(DIRECTORY urdf ur5_rg2/meshes DESTINATION share/${PROJECT_NAME})
+install(DIRECTORY urdf ur5_rg2/meshes launch config
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
 
-# Setup the project
-ament_package()
+# Make scripts executable
+catkin_install_python(PROGRAMS
+  scripts/test_gripper.py
+  DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
