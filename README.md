@@ -28,6 +28,12 @@ source devel/setup.bash
 roslaunch ur5_rg2_ign ur5_rg2_bringup.launch
 ```
 
+To test the gripper, goto workspace root directory
+
+```bash
+rosrun ur5_rg2_ign test_gripper.py
+```
+
 ### ROS 2 (Optional)
 
 Build with `colcon` and source the environment to make URDF discoverable for ROS 2.
