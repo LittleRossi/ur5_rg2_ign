@@ -11,6 +11,23 @@ The SDF description also contains estimated **dynamic parameters** for joints. N
 
 ## Instructions
 
+### Running in Simulation
+
+1. Create catkin workspace and clone repo in src folder.
+2. Goto: workspace root directory
+
+```bash
+catkin_make
+```
+
+```bash
+source devel/setup.bash
+```
+
+```bash
+roslaunch ur5_rg2_ign ur5_rg2_bringup.launch
+```
+
 ### ROS 2 (Optional)
 
 Build with `colcon` and source the environment to make URDF discoverable for ROS 2.
